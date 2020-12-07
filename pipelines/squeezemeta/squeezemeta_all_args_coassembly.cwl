@@ -5,7 +5,7 @@ class: CommandLineTool
 
 hints:
   - class: DockerRequirement
-    dockerPull: umigs/chiron-humann2
+    dockerPull: umigs/chiron-squeezemeta
 
 inputs:
   mode:
