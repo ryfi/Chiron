@@ -1,0 +1,61 @@
+# Either sequential, coassembly, or merged
+mode: "coassembly"
+# Project name, (REQUIRED for coassembly and merged modes)
+project: "test"
+# Samples file listing all file names expected as input. It has the format:
+# <Sample> <filename> <pair1|pair2>. A fourth optional column can take the
+# noassembly value, indicating that these sample must not be assembled with the
+# rest (but will be mapped against the assembly to get abundances).
+samples_file: "test.samples"
+# Path to directory containing FASTQ files
+sequence_file_path: "/raw/files/dir"
+# Filters with Trimmomatic
+cleaning: "no"
+# Options for Trimmomatic
+cleaning_options: "LEADING:8"
+# Either megahit, spades, canu, flye assembler
+assembler: "megahit"
+# Additional options specific to assembler
+assembler_options: "" ###########REVISIT
+# Minimum length of contigs
+contiglen: 200
+# Path to an external assembly provided by the user. The file must contain
+# contigs in the fasta format. This overrides the assembly step of SqueezeMeta.
+extassembly: "" ###########REVISIT
+# unassembled reads will be treated as contigs and included in the contig fasta
+# file resulting from the assembly. This will produce 100% mapping percentages,
+# and will increase BY A LOT the number of contigs to process. Use with caution
+singletons: "no"
+# Skipp COG assignment
+nocog: "no"
+# Skip KEGG assignment
+nokegg: "no"
+# Skip Pfam assignment
+nopfam: "no"
+# Drop identity filters for eukaryotic annotation. This is recommended for
+# analyses in which the eukaryotic population is relevant, as it will yield more
+# annotations. See the manual for details.
+euk: "no"
+# List of additional user-provided databases for functional annotations. More
+# information can be found in the manual.
+extdb: "" ###########REVISIT
+# Run BlastX ORF prediction in addition to Prodigal
+doublepass: "no"
+# Either bowtie, bwa, minimap2-ont, minimap2-pb, minimap2-sr as read mapper
+mapping: "bowtie"
+# Skip binning
+nobins: "no"
+# Skip MaxBin binning
+nomaxbin: "no"
+# Skip MetaBat2 binning
+nometabat: "no"
+# Number of threads
+threads: 8
+# Block size for DIAMOND against the nr database
+block_size: 8
+# Memory for canu in Gb
+canumem: 32
+# Run on less than 16 Gb of RAM memory. Equivalent to: --block_size 3 --canumem 15
+lowmem: "no"
+# Run on MinION reads
+minion: "no"

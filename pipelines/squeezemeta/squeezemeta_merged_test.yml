@@ -1,0 +1,8 @@
+# Either sequential, coassembly, or merged
+mode: "merged"
+# Project name, (REQUIRED for coassembly and merged modes)
+project: "Hadza"
+# Samples file listing all file names expected as input
+samples_file: "test.samples"
+# Path to directory containing FASTQ files - this is the default path specified in the build Dockerfile; likely to change
+sequence_file_path: "/squeezemeta_db/test/raw/"
