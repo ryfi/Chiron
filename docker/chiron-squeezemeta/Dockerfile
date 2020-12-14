@@ -32,7 +32,7 @@ RUN cpan Term::ANSIColor
 # Python modules
 RUN apt-get install python3-pip python3-dev python3-scipy python3-matplotlib python3-numpy python3-pandas -y
 RUN python3 -m pip install future cython
-RUN python3 -m pip install dendropy pysam
+RUN python3 -m pip install dendropy pysam pyyaml
 
 # R packages
 RUN apt-get install libssl-dev
@@ -71,3 +71,6 @@ RUN mkdir -p /squeezemeta_db
 
 # Verify that all the dependencies can be located in this environment
 # RUN perl /SqueezeMeta-1.3.0/utils/install_utils/test_install.pl
+
+# Run SqueezeMeta on test data.
+# RUN perl /SqueezeMeta-1.3.0/scripts/SqueezeMeta.pl -m merged -p Hadza -s /squeezemeta_db/test/test.samples -f /squeezemeta_db/test/raw/
