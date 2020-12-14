@@ -29,17 +29,17 @@ inputs:
       prefix: -f
     type: string
   cleaning:
-    label: Filters with Trimmomatic (Default: no)
+    label: Filters with Trimmomatic (Default no)
     inputBinding:
       prefix: --cleaning
     type: string
   cleaning_options:
-    label: Options for Trimmomatic (default: LEADING:8 TRAILING:8 SLIDINGWINDOW:10:15 MINLEN:30)
+    label: Options for Trimmomatic
     inputBinding:
       prefix: -cleaning_options
     type: string
   assembler:
-    label: Either megahit, spades, canu, flye assembler (Default:megahit)
+    label: Either megahit, spades, canu, flye assembler (Default megahit)
     inputBinding:
       prefix: -a
     type: string
@@ -49,7 +49,7 @@ inputs:
       prefix: -assembly_options
     type: string
   contiglen:
-    label: Minimum length of contigs (Default: 200)
+    label: Minimum length of contigs (Default 200)
     inputBinding:
       prefix: -contiglen
     type: int
@@ -59,22 +59,22 @@ inputs:
       prefix: -extassembly
     type: string
   singletons:
-    label: unassembled reads will be treated as contigs and included in the contig fasta file resulting from the assembly. This will produce 100% mapping percentages, and will increase BY A LOT the number of contigs to process. Use with caution (Default: no)
+    label: unassembled reads will be treated as contigs and included in the contig fasta file resulting from the assembly. This will produce 100% mapping percentages, and will increase BY A LOT the number of contigs to process. Use with caution (Default no)
     inputBinding:
       prefix: -singletons
     type: string
   nocog:
-    label: Skipp COG assignment (Default: no)
+    label: Skipp COG assignment (Default no)
     inputBinding:
       prefix: --nocog
     type: string
   nokegg:
-    label: Skip KEGG assignment (Default: no)
+    label: Skip KEGG assignment (Default no)
     inputBinding:
       prefix: --nokegg
     type: string
   nopfam:
-    label: Skip Pfam assignment (Default: no)
+    label: Skip Pfam assignment (Default no)
     inputBinding:
       prefix: --nopfam
     type: string
@@ -89,56 +89,56 @@ inputs:
       prefix: -extdb
     type: string
   doublepass:
-    label: Run BlastX ORF prediction in addition to Prodigal (Default: no)
+    label: Run BlastX ORF prediction in addition to Prodigal (Default no)
     inputBinding:
       prefix: --doublepass
     type: string
   mapping:
-    label: Either bowtie, bwa, minimap2-ont, minimap2-pb, minimap2-sr as read mapper (Default: bowtie)
+    label: Either bowtie, bwa, minimap2-ont, minimap2-pb, minimap2-sr as read mapper (Default bowtie)
     inputBinding:
       prefix: -map
     type: string
   nobins:
-    label: Skip binning (Default: no)
+    label: Skip binning (Default no)
     inputBinding:
       prefix: --nobins
     type: string
   nomaxbin:
-    label: Skip MaxBin binning (Default: no)
+    label: Skip MaxBin binning (Default no)
     inputBinding:
       prefix: --nomaxbin
     type: string
   nometabat:
-    label: Skip MetaBat2 binning (Default: no)
+    label: Skip MetaBat2 binning (Default no)
     inputBinding:
       prefix: --nometabat
     type: string
   threads:
-    label: Number of threads (Default: 12)
+    label: Number of threads (Default 12)
     inputBinding:
       prefix: -t
     type: int
     default: 12
   block_size:
-    label: Block size for DIAMOND against the nr database (Default: 8)
+    label: Block size for DIAMOND against the nr database (Default 8)
     inputBinding:
       prefix: -b
     type: int
     default: 8
   canumem:
-    label: Memory for canu in Gb (Default: 32)
+    label: Memory for canu in Gb (Default 32)
     inputBinding:
       prefix: -canumem
     type: int
     default: 32
   lowmem:
-    label: Run on less than 16 Gb of RAM memory (Default: no). Equivalent to: --block_size 3 --canumem 15
+    label: Run on less than 16 Gb of RAM memory (Default no). Equivalent to --block_size 3 --canumem 15
     inputBinding:
       prefix: --lowmem
     type: string
     default: "no"
   minion:
-    label: Run on MinION reads (Default: no)
+    label: Run on MinION reads (Default no)
     inputBinding:
       prefix: --minion
     type: string
