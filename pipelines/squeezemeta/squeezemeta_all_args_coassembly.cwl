@@ -79,7 +79,7 @@ inputs:
       prefix: --nopfam
     type: string
   euk:
-    label: Drop identity filters for eukaryotic annotation (Default: no). This is recommended for analyses in which the eukaryotic population is relevant, as it will yield more annotations. See the manual for details.
+    label: Drop identity filters for eukaryotic annotation (Default no). This is recommended for analyses in which the eukaryotic population is relevant, as it will yield more annotations. See the manual for details.
     inputBinding:
       prefix: --euk
     type: string
