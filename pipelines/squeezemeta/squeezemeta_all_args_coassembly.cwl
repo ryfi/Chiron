@@ -142,6 +142,10 @@ inputs:
     inputBinding:
       prefix: --minion
     type: string
-
+outputs:
+  out_stats:
+    type: File
+    outputBinding:
+      glob: $(inputs.project)
 
 baseCommand: ["perl /SqueezeMeta-1.3.0/scripts/SqueezeMeta.pl"]
