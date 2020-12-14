@@ -1,3 +1,4 @@
+output_dir: "."
 # Either sequential, coassembly, or merged
 mode: "coassembly"
 # Project name, (REQUIRED for coassembly and merged modes)

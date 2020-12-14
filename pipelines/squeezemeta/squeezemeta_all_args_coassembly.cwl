@@ -143,8 +143,9 @@ inputs:
       prefix: --minion
     type: string
 outputs:
-  out_stats:
+  out_dir:
+    type: Directory
     outputBinding:
-      glob: $(inputs.project)
+      glob: $(inputs.output_dir)
 
 baseCommand: ["./SqueezeMeta-1.3.0/scripts/SqueezeMeta.pl"]
