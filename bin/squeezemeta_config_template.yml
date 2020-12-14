@@ -1,0 +1,12 @@
+# Mode of assembly to perform. Either sequential, coassembly, or merged (REQUIRED)
+mode: 'merged'
+# Project name. (REQUIRED for coassembly and merged modes)
+project: "on"
+# Samples file listing all file names expected as input (REQUIRED) It has
+# the format: <Sample> <filename> <pair1|pair2>. A fourth optional column
+# can take the noassembly value, indicating that these sample must not be
+# assembled with the rest (but will be mapped against the assembly to get
+# abundances).
+samples_file: '/squeezemeta_db/test/test.samples'
+# Path to directory containing FASTQ files (REQUIRED)
+sequence_file_path: '/squeezemeta_db/test/raw/'
