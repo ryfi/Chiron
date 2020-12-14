@@ -144,4 +144,4 @@ inputs:
     type: string
 
 
-baseCommand: ["squeezemeta"]
+baseCommand: ["perl /SqueezeMeta-1.3.0/scripts/SqueezeMeta.pl"]
