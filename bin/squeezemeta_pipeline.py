@@ -6,8 +6,6 @@ Code adapted from work originally done by Shaun Adkins (sadkins@som.umaryland.ed
 
 """
 
-# vim: tabstop=8 expandtab shiftwidth=4 softtabstop=4
-
 import logging
 import os
 import subprocess
@@ -27,10 +25,23 @@ CWL_WORKFLOW_JOIN = os.path.dirname(os.path.realpath(sys.path[0])) + "/pipelines
 def main():
     # Set up options parser and help statement
     parser = ArgumentParser(description="Invoke a Squeezemeta pipeline using the Common Workflow Language")
-    parser.add_argument("--input_file_list", "-i", help="List file containing paths to input samples", metavar="/path/to/test.samples", required=True)
-    parser.add_argument("--config_file", "-c", help="YAML-based config file of parameters to add", metavar="/path/to/config.yml", required=True)
-    parser.add_argument("--out_dir", "-o", help="Optional. Directory to stage output files.  Default is ./cwl_output", metavar="/path/to/outdir", default="./cwl_output")
-    parser.add_argument("--debug", "-d", help="Set the debug level", default="ERROR", metavar="DEBUG/INFO/WARNING/ERROR/CRITICAL")
+    parser.add_argument("--input_file_list", "-i",
+                        help="List file containing paths to input samples",
+                        metavar="/path/to/test.samples",
+                        required=True)
+    parser.add_argument("--config_file", "-c",
+                        help="YAML-based config file of parameters to add",
+                        metavar="/path/to/config.yml",
+                        required=True)
+    parser.add_argument("--out_dir",
+                        "-o",
+                        help="Optional. Directory to stage output files.  Default is ./cwl_output",
+                        metavar="/path/to/outdir",
+                        default="./cwl_output")
+    parser.add_argument("--debug", "-d",
+                        help="Set the debug level",
+                        default="ERROR",
+                        metavar="DEBUG/INFO/WARNING/ERROR/CRITICAL")
     args = parser.parse_args()
     check_args(args)
 
