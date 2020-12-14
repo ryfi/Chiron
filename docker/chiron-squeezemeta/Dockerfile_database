@@ -1,0 +1,21 @@
+FROM squeezemeta:latest
+
+#################
+## SqueezeMeta ##
+#################
+
+# This will run download the most recent build of the SqueezeMeta database
+# and update the current image to use this dataset for future analysis.
+RUN perl /SqueezeMeta-1.3.0/utils/install_utils/download_databases.pl /squeezemeta_db > /squeezemeta_db/build_status_details.txt
+
+# An important note here is that you should likely only use this if you
+# want the data within a dedicated image itself. If you want to keep the
+# database disassociated, perform the usual docker build on the Dockerfile
+# in this same directory. Then, perform the following 2 commands to build the
+# database locally to use in alternative images.
+
+# This kicks off a docker image in detached mode, so you can send it commands
+# docker run -d --name squeezemeta -v /path/to/store/the/database/locally:/squeezemeta_db -i -t squeezemeta
+# This executes the SqueezeMeta script to download the most recent build of
+# the database. If you want to build from scratch use: /SqueezeMeta-1.3.0/utils/install_utils/make_databases.pl
+# docker exec squeezemeta /bin/bash -c "perl /SqueezeMeta-1.3.0/utils/install_utils/download_databases.pl /squeezemeta_db  &> /squeezemeta_db/build_status.txt"
