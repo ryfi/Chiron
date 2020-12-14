@@ -1,7 +1,7 @@
 # Mode of assembly to perform. Either sequential, coassembly, or merged (REQUIRED)
 mode: 'merged'
 # Project name. (REQUIRED for coassembly and merged modes)
-project: "on"
+project: "Hadza"
 # Samples file listing all file names expected as input (REQUIRED) It has
 # the format: <Sample> <filename> <pair1|pair2>. A fourth optional column
 # can take the noassembly value, indicating that these sample must not be
