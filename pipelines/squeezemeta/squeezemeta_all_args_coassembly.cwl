@@ -19,7 +19,7 @@ inputs:
       prefix: -p
     type: string
   samples_file:
-    label: Samples file listing all file names expected as input (REQUIRED) It has the format: <Sample> <filename> <pair1|pair2>. A fourth optional column can take the noassembly value, indicating that these sample must not be assembled with the rest (but will be mapped against the assembly to get abundances).
+    label: Samples file listing all file names expected as input (REQUIRED) It has the format <Sample> <filename> <pair1|pair2>. A fourth optional column can take the noassembly value, indicating that these sample must not be assembled with the rest (but will be mapped against the assembly to get abundances).
     inputBinding:
       prefix: -s
     type: File
